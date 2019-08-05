@@ -1,0 +1,761 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "max": 40,
+            "min": -10,
+            "unit": "celsius"
+          },
+          "mappings": [],
+          "override": {},
+          "thresholds": [
+            {
+              "color": "light-blue",
+              "index": 0,
+              "value": null
+            },
+            {
+              "color": "super-light-green",
+              "index": 1,
+              "value": 0
+            },
+            {
+              "color": "dark-green",
+              "index": 2,
+              "value": 19
+            },
+            {
+              "color": "#EAB839",
+              "index": 3,
+              "value": 30
+            },
+            {
+              "color": "dark-red",
+              "index": 4,
+              "value": 35
+            }
+          ],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.2.5",
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  ts AS \"time\",\n  temperature\nFROM airquality\nWHERE\n  $__timeFilter(ts)\nORDER BY ts",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "temperature"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "airquality",
+          "timeColumn": "ts",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Temperature",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "max": 100,
+            "min": 0,
+            "unit": "percent"
+          },
+          "mappings": [],
+          "override": {},
+          "thresholds": [
+            {
+              "color": "dark-red",
+              "index": 0,
+              "value": null
+            },
+            {
+              "color": "#EAB839",
+              "index": 1,
+              "value": 30
+            },
+            {
+              "color": "dark-green",
+              "index": 2,
+              "value": 35
+            },
+            {
+              "color": "dark-yellow",
+              "index": 3,
+              "value": 65
+            },
+            {
+              "color": "dark-red",
+              "index": 4,
+              "value": 70
+            }
+          ],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.2.5",
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  ts AS \"time\",\n  humidity\nFROM airquality\nWHERE\n  $__timeFilter(ts)\nORDER BY ts",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "humidity"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "airquality",
+          "timeColumn": "ts",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Humidity",
+      "type": "gauge"
+    },
+    {
+      "description": "2.5 um particles",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "max": 400,
+            "min": 0,
+            "unit": "conμgm3"
+          },
+          "mappings": [],
+          "override": {},
+          "thresholds": [
+            {
+              "color": "dark-green",
+              "index": 0,
+              "value": null
+            },
+            {
+              "color": "semi-dark-yellow",
+              "index": 1,
+              "value": 51
+            },
+            {
+              "color": "semi-dark-orange",
+              "index": 2,
+              "value": 101
+            },
+            {
+              "color": "dark-red",
+              "index": 3,
+              "value": 151
+            },
+            {
+              "color": "dark-purple",
+              "index": 4,
+              "value": 201
+            },
+            {
+              "color": "rgb(126, 0, 35)",
+              "index": 5,
+              "value": 301
+            }
+          ],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.2.5",
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  ts AS \"time\",\n  u25\nFROM airquality\nWHERE\n  $__timeFilter(ts)\nORDER BY ts",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "u25"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "airquality",
+          "timeColumn": "ts",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "PM 2.5",
+      "type": "gauge"
+    },
+    {
+      "description": "10 um particles",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 10,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "max": 400,
+            "min": 0,
+            "unit": "conμgm3"
+          },
+          "mappings": [],
+          "override": {},
+          "thresholds": [
+            {
+              "color": "dark-green",
+              "index": 0,
+              "value": null
+            },
+            {
+              "color": "semi-dark-yellow",
+              "index": 1,
+              "value": 51
+            },
+            {
+              "color": "semi-dark-orange",
+              "index": 2,
+              "value": 101
+            },
+            {
+              "color": "dark-red",
+              "index": 3,
+              "value": 151
+            },
+            {
+              "color": "dark-purple",
+              "index": 4,
+              "value": 201
+            },
+            {
+              "color": "rgb(126, 0, 35)",
+              "index": 5,
+              "value": 301
+            }
+          ],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.2.5",
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  ts AS \"time\",\n  u10\nFROM airquality\nWHERE\n  $__timeFilter(ts)\nORDER BY ts",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "u10"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "airquality",
+          "timeColumn": "ts",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "PM 10",
+      "type": "gauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 5
+      },
+      "id": 12,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  ts AS \"time\",\n  temperature\nFROM airquality\nWHERE\n  $__timeFilter(ts)\nORDER BY ts",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "temperature"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "airquality",
+          "timeColumn": "ts",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Temperature History",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "celsius",
+          "label": "Temperature",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "decimals": null,
+          "format": "percent",
+          "label": "Humidity",
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 5
+      },
+      "id": 14,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  ts AS \"time\",\n  humidity\nFROM airquality\nWHERE\n  $__timeFilter(ts)\nORDER BY ts",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "humidity"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "airquality",
+          "timeColumn": "ts",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Humidity History",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "percent",
+          "label": "Humidity",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 16,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  ts AS \"time\",\n  u25,\n  u10\nFROM airquality\nWHERE\n  $__timeFilter(ts)\nORDER BY ts",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "u25"
+                ],
+                "type": "column"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "u10"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "airquality",
+          "timeColumn": "ts",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Particle Concentration History",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "conμgm3",
+          "label": "Concentration",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "2m",
+  "schemaVersion": 18,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "30s",
+      "1m",
+      "2m",
+      "5m",
+      "10m",
+      "1h"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "utc",
+  "title": "Full dashboard",
+  "uid": "478gzDzRz",
+  "version": 2
+}
