@@ -1,0 +1,4 @@
+# Run dust monitor every 5 minutes
+*/5 * * * * /usr/local/bin/dustmonitor.py >> /home/pi/dust/dust.log 2>&1
+# Kill process 2 minutes later if it has hung
+2-59/5 * * * * /usr/bin/killall dustmonitor.py
